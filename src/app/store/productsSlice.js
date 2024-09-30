@@ -3,7 +3,10 @@ import { act } from "react";
 import axios from "axios";
 // import
 const initialState = {
-  products: JSON.parse(localStorage.getItem("products")) || [],
+  products:
+    typeof window !== "undefined"
+      ? JSON.parse(localStorage.getItem("products")) || []
+      : [],
 };
 
 export const getProducts = createAsyncThunk(
