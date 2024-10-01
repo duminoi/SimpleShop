@@ -7,8 +7,8 @@ export default async function Detail({ params }) {
   const productData = await products;
   const product = productData.find((item) => item.id === Number(id));
   console.log("product", product);
-  console.log("image", product.category.image);
-  const image = product.category.image;
+  console.log("image", product?.category?.image);
+  const image = product?.category?.image;
 
   return (
     <div className="px-[30rem] py-[5rem] flex gap-[5rem]">
@@ -21,23 +21,20 @@ export default async function Detail({ params }) {
         style={{ width: "100%", height: "auto" }}
       ></Image>
       <div className=" flex flex-col gap-3">
-        <div className="text-3xl">{product.category.name}</div>
+        <div className="text-3xl">{product?.category?.name}</div>
         <div className="text-2xl">
           Tình trạng:
           <span className="text-green-700">Còn hàng</span>
         </div>
         <div className="flex space-x-2">
           <div className="text-xl"> Chọn màu:</div>
+          <div className="w-8 h-8 bg-red-500  cursor-pointer" title="Red"></div>
           <div
-            className="w-8 h-8 bg-red-500 rounded-full cursor-pointer"
-            title="Red"
-          ></div>
-          <div
-            className="w-8 h-8 bg-blue-500 rounded-full cursor-pointer"
+            className="w-8 h-8 bg-blue-500 cursor-pointer"
             title="Blue"
           ></div>
           <div
-            className="w-8 h-8 bg-green-500 rounded-full cursor-pointer"
+            className="w-8 h-8 bg-green-500 cursor-pointer"
             title="Green"
           ></div>
         </div>
@@ -54,7 +51,7 @@ export default async function Detail({ params }) {
         </div>
         <div className="text-2xl">
           Mô tả:
-          <span className="text-xl"> {product.description}</span>
+          <span className="text-xl"> {product?.description}</span>
         </div>
         <button className="bg-red-500 text-white h-[3rem]">Mua ngay</button>
       </div>
