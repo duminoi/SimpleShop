@@ -1,9 +1,5 @@
-// app/layout.js
-// "use client";
 import localFont from "next/font/local";
 import "./globals.css";
-// import { Provider } from "react-redux";
-// import { store } from "./store/store";
 import Header from "./components/Header/page";
 
 const geistSans = localFont({
