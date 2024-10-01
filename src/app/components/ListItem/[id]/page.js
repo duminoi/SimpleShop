@@ -1,10 +1,11 @@
-"use client";
+// "use client";
 import Image from "next/image";
-import { useSelector } from "react-redux";
-export default function Detail({ params }) {
-  const { products } = useSelector((state) => state.products);
+// import { useSelector } from "react-redux";
+import { products } from "@/app/store/productsSlice";
+export default async function Detail({ params }) {
   const { id } = params;
-  const product = products.find((item) => item.id === Number(id));
+  const productData = await products;
+  const product = productData.find((item) => item.id === Number(id));
   console.log("product", product);
   console.log("image", product.category.image);
   const image = product.category.image;
