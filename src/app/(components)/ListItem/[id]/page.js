@@ -1,7 +1,20 @@
-// "use client";
 import Image from "next/image";
 // import { useSelector } from "react-redux";
 import { products } from "@/app/store/productsSlice";
+
+export async function generateMetadata({ params }) {
+  const { id } = params;
+  const productData = await products;
+  const product = productData.find((item) => {
+    return item.id === Number(id);
+  });
+  console.log("id", id);
+
+  return {
+    title: product?.category?.name,
+  };
+}
+
 export default async function Detail({ params }) {
   const { id } = params;
   const productData = await products;
