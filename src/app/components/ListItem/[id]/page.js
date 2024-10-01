@@ -10,8 +10,15 @@ export default function Detail({ params }) {
   const image = product.category.image;
 
   return (
-    <div className="mx-[30rem] my-[5rem] flex gap-[5rem]">
-      <Image width={300} height={500} src={`${product.images[0]}`}></Image>
+    <div className="px-[30rem] py-[5rem] flex gap-[5rem]">
+      <Image
+        priority
+        alt="Product image"
+        width={200}
+        height={300}
+        src={`${image}`}
+        style={{ width: "100%", height: "auto" }}
+      ></Image>
       <div className=" flex flex-col gap-3">
         <div className="text-3xl">{product.category.name}</div>
         <div className="text-2xl">

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import newseven from "../../images/newseven.png";
 import { UserOutlined } from "@ant-design/icons";
@@ -11,7 +12,7 @@ export default function Header() {
         <div className="">
           <Link href={"/"}>
             {" "}
-            <Image width={100} height={100} src={newseven}></Image>
+            <Image alt="Logo" width={100} height={100} src={newseven}></Image>
           </Link>
         </div>
         {/* end icon-wrapper */}

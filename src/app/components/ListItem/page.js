@@ -6,10 +6,20 @@ import Link from "next/link";
 
 export default function ListItem({ id, category, price, images }) {
   // console.log("id", id);
+  // console.log("image", images);
+  console.log("image", category.image);
+
   return (
     <div className=" flex flex-col justify-center items-center">
       <Link href={`../../components/ListItem/${id}`}>
-        <Image width={300} height={500} src={`${images[0]}`}></Image>
+        <Image
+          priority
+          width={300}
+          height={500}
+          src={category.image}
+          alt="Product image"
+          style={{ width: "100%", height: "auto" }}
+        ></Image>
       </Link>
       <div className="text-3xl font-bold">{category.name}</div>
 
