@@ -4,7 +4,7 @@ import product1 from "../../images/product1.jpg";
 import Link from "next/link";
 
 export default function ListItem({ id, category, price }) {
-  console.log("image", category.image);
+  // console.log("image", category.image);
 
   return (
     <div className=" flex flex-col justify-center items-center">
