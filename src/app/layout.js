@@ -1,9 +1,9 @@
 // app/layout.js
-"use client";
+// "use client";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Provider } from "react-redux";
-import { store } from "./store/store";
+// import { Provider } from "react-redux";
+// import { store } from "./store/store";
 import Header from "./components/Header/page";
 
 const geistSans = localFont({
@@ -20,16 +20,16 @@ const geistMono = localFont({
 // Component Layout
 export default function RootLayout({ children }) {
   return (
-    <Provider store={store}>
-      <html lang="en">
-        <head>{/* Các thẻ head khác nếu cần */}</head>
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          <Header />
-          {children}
-        </body>
-      </html>
-    </Provider>
+    // <Provider store={store}>
+    <html lang="en">
+      <head>{/* Các thẻ head khác nếu cần */}</head>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <Header />
+        {children}
+      </body>
+    </html>
+    // </Provider>
   );
 }
